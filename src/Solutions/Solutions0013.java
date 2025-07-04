@@ -38,26 +38,18 @@ public class Solutions0013 implements tags.Math,tags.String,tags.HashTable,dffic
         }
     }
     public static int f(String s) {
-        int a=0,b=0;
-        int tol=0;
-        int unc=0;
-        for(int i=0;i<s.length();++i){
 
-            a = d.get(s.charAt(i));
+        int length = s.length();
+        int tol=d.get(s.charAt(length -1));
 
-            if(a>b){//当前的数字大于前一个数时 就可以相加
-                tol= a+tol;
-                  //将累计的要减少的数额进行计算。
-                if (unc!=0){
-                    tol=tol-unc;
-                    unc=0;
-                }
-            }else{//当前的数小于或等于时，累计减少的数额
-                unc=a+unc;
+        for(int i = 0; i< length -1; ++i){
+            int a = d.get(s.charAt(i));
+            int b = d.get(s.charAt(i+1));
+            if(a<b){
+                tol+= -1*a;
+            }else {
+                tol+= a;
             }
-
-            if (i==s.length()-1) tol+=unc;//将个位数的加入总额。
-            b=a;//结束时当前数为上一个数字。
         }
 
         return tol;
@@ -75,16 +67,16 @@ public class Solutions0013 implements tags.Math,tags.String,tags.HashTable,dffic
 
     public static void main(String[] args) {
 
-//        System.out.println(f("MCMXCIV"));
+        System.out.println(f("MCMXCII"));
 
-//        System.out.println(f("MCCMXCII"));
-        System.out.println(f("MDXCII"));
+        System.out.println(f("MDCCXCII"));
+//        System.out.println(f("MDXCII"));
 
 //        System.out.println(f("MCCMXCIIII"));
 
 //        System.out.println(f2("MCMXCIV"));
 
-        System.out.println(f2("MCCMXCII"));
+        System.out.println(f2("MCMXCII"));
         System.out.println(f2("MDCCXCII"));
 
 //        System.out.println(f2("MCCMXCIIII"));
