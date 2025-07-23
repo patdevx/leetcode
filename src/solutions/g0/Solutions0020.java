@@ -1,4 +1,4 @@
-package solutions;
+package solutions.g0;
 
 
 import com.sun.jmx.remote.internal.ArrayQueue;

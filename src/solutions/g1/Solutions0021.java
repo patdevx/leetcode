@@ -1,4 +1,4 @@
-package solutions;
+package solutions.g1;
 
 
 import dataStructure.ListNode;

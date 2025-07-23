@@ -1,4 +1,4 @@
-package solutions;
+package solutions.g0;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
